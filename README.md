@@ -1,4 +1,4 @@
-# `heartbeep` - a really, really simple heartbeat
+# `heartbeep` - minimum viable heartbeat
 
 This is a simple Go-based monitoring tool designed to check the availability of a remote machine over TCP by attempting to establish a connection to a specified port. The primary use case for this tool is in isolated, private networks where a lightweight solution is required.
 
@@ -19,28 +19,28 @@ This is a simple Go-based monitoring tool designed to check the availability of 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/YourUsername/heartbeat-monitor.git
-cd heartbeat-monitor
+git clone https://github.com/hiAndrewQuinn/heartbeep.git
+cd heartbeep
 ```
 
 2. Build the binary:
 
 ```bash
-go build -o heartbeat heartbeat.go
+go build -o heartbeep heartbeep.go
 ```
 
 3. Optionally, move the binary to a standard bin directory:
 
 ```bash
-sudo mv heartbeat /usr/local/bin/
+sudo mv heartbeep /usr/local/bin/
 ```
 
 ## Usage
 
-Run the heartbeat monitor with the `-ip` and `-port` flags to specify the target IP and port, respectively.
+Run the heartbeep monitor with the `-ip` and `-port` flags to specify the target IP and port, respectively.
 
 ```bash
-heartbeat -ip=10.0.0.2 -port=22
+heartbeep -ip=10.0.0.2 -port=22
 ```
 
 If the remote machine at the specified IP and port is unreachable, the tool will print a log message indicating that the machine is down.
@@ -68,7 +68,7 @@ This project is licensed under the MIT License.
 
 ---
 
-Make sure to replace `YourUsername` with your actual GitHub username, and adjust the repository URL accordingly. You can also customize other parts of the `README.md` as you see fit. This should provide a good starting point for your GitHub project!
+Make sure to replace `hiAndrewQuinn` with your actual GitHub username, and adjust the repository URL accordingly. You can also customize other parts of the `README.md` as you see fit. This should provide a good starting point for your GitHub project!
 ## Features
 
 - Simple command-line interface.
@@ -84,18 +84,18 @@ Make sure to replace `YourUsername` with your actual GitHub username, and adjust
 ## Installation
 
 ```bash
-git clone https://github.com/YourUsername/heartbeat-monitor.git
-cd heartbeat-monitor
+git clone https://github.com/hiAndrewQuinn/heartbeep.git
+cd heartbeep
 
 # Build the binary.
-go build -o heartbeat heartbeat.go
+go build -o heartbeep heartbeep.go
 ```
 
 Of course! Here's a comprehensive `README.md` for your project:
 
 ---
 
-# Heartbeat Monitor
+# heartbeep Monitor
 
 This is a simple Go-based monitoring tool designed to check the availability of a remote machine over TCP by attempting to establish a connection to a specified port. The primary use case for this tool is in isolated, private networks where a lightweight solution is required.
 
@@ -116,37 +116,37 @@ This is a simple Go-based monitoring tool designed to check the availability of 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/YourUsername/heartbeat-monitor.git
-cd heartbeat-monitor
+git clone https://github.com/hiAndrewQuinn/heartbeep.git
+cd heartbeep
 ```
 
 2. Build the binary:
 
 ```bash
-go build -o heartbeat heartbeat.go
+go build -o heartbeep heartbeep.go
 ```
 
 Or, if you want a _totally_ static binary, which doesn't depend on the
 underlying Unix system at all:
 
 ```
-CGO_ENABLED=0 go build -a -ldflags '-extldflags "-static"' -o heartbeat heartbeat.go
+CGO_ENABLED=0 go build -a -ldflags '-extldflags "-static"' -o heartbeep heartbeep.go
 ```
 
-You can then verify the binary is static by running `file heartbeat`.
+You can then verify the binary is static by running `file heartbeep`.
 
 3. Optionally, move the binary to a standard bin directory:
 
 ```bash
-sudo mv heartbeat /usr/local/bin/
+sudo mv heartbeep /usr/local/bin/
 ```
 
 ## Usage
 
-Run the heartbeat monitor with the `-ip` and `-port` flags to specify the target IP and port, respectively.
+Run the heartbeep monitor with the `-ip` and `-port` flags to specify the target IP and port, respectively.
 
 ```bash
-heartbeat -ip=10.0.0.2 -port=22
+heartbeep -ip=10.0.0.2 -port=22
 ```
 
 If the remote machine at the specified IP and port is unreachable, the tool will print a log message indicating that the machine is down. Otherwise it will silently succeed.
@@ -165,7 +165,7 @@ For periodic checks, you can use `systemd` timers:
 
       [Service]
       Type=oneshot
-      ExecStart=/path/to/heartbeat-binary -ip=10.0.0.2 -port=22
+      ExecStart=/path/to/heartbeep-binary -ip=10.0.0.2 -port=22
       ```
 
    2. Then you would create `/etc/systemd/system/monitor-10-0-0-2.timer`:
@@ -201,4 +201,4 @@ This project is licensed under the MIT License.
 
 ---
 
-Make sure to replace `YourUsername` with your actual GitHub username, and adjust the repository URL accordingly. You can also customize other parts of the `README.md` as you see fit. This should provide a good starting point for your GitHub project!
+Make sure to replace `hiAndrewQuinn` with your actual GitHub username, and adjust the repository URL accordingly. You can also customize other parts of the `README.md` as you see fit. This should provide a good starting point for your GitHub project!
