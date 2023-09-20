@@ -2,6 +2,7 @@ package main
 
 import (
   "time"
+  "os"
 	"flag"
 	"log"
 	"net"
@@ -24,6 +25,8 @@ func main() {
 
 	if !isAlive(*ipAddr, *port) {
 		log.Printf("Machine %s on port %s is down!\n", *ipAddr, *port)
+    os.Exit(1)
 	}
+  os.Exit(0)
 }
 

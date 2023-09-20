@@ -6,11 +6,12 @@ Intended use is for remote machines on a local network, and with `systemd`'s tim
 
 ## Usage
 
-Run `heartbeep` using the `-ip` and `-port` flags to specify the target IP and port:
-
 ```bash
-./heartbeep -ip=8.8.8.8 -port=53    # returns silently, because it succeeds.
-./heartbeep -ip=10.0.0.2 -port=22
+$ ./heartbeep -ip=8.8.8.8 -port=53 && echo "success!"         # returns status code 0 silently on success.
+success!
+
+$ ./heartbeep -ip=10.0.0.2 -port=22 && echo "success!"        # returns status code 1. no success.
+2023/09/20 20:41:24 Machine 10.0.0.2 on port 22 is down!
 ```
 
 To integrate `heartbeep` with `systemd` for consistent periodic checks (this example uses `10.0.0.2` on port `22`):
